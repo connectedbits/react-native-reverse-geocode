@@ -47,10 +47,13 @@ class RNReverseGeocodeManager (reactContext: ReactApplicationContext) : ReactCon
 
   private fun formatAddress(address: Address): WritableMap {
     val addressObject = WritableNativeMap()
-    
     addressObject.putString("name", address.getFeatureName())
     addressObject.putMap("location", getLocationFromAddress(address))
     addressObject.putString("address", getFirstLineOfAddress(address))
+    addressObject.putString("locality", address.getLocality())
+    addressObject.putString("administrativeArea", address.getAdminArea())
+    addressObject.putString("postalCode", address.getPostalCode())
+
     
     return addressObject
   }
