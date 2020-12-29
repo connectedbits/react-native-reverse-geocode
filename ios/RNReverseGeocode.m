@@ -54,6 +54,9 @@ RCT_EXPORT_MODULE()
         
         [formedLocation setValue:mapItem.name forKey:@"name"];
         [formedLocation setValue:mapItem.placemark.title forKey:@"address"];
+        [formedLocation setValue:mapItem.placemark.locality forKey:@"locality"];
+        [formedLocation setValue:mapItem.placemark.postalCode forKey:@"postalCode"];
+        [formedLocation setValue:mapItem.placemark.administrativeArea forKey:@"administrativeArea"];
         [formedLocation setValue:@{@"latitude": @(mapItem.placemark.coordinate.latitude),
                                    @"longitude": @(mapItem.placemark.coordinate.longitude)} forKey:@"location"];
         
