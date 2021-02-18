@@ -1,5 +1,4 @@
-
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 
 const { RNReverseGeocode } = NativeModules;
 
@@ -14,15 +13,10 @@ const debounce = (fn, time, ...args) => {
   };
 };
 
-const searchForLocations = (
-  searchText: string,
-  region: Region,
-  callback: Callback,
-  debounceMs: number = 200,
-) => {
+const searchForLocations = (searchText, region, callback, debounceMs = 200) => {
   debounce(
     RNReverseGeocode.searchForLocations(searchText, region, callback),
-    debounceMs,
+    debounceMs
   );
 };
 
